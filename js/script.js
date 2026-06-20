@@ -29,24 +29,6 @@
     iconClose.style.display = 'none';
   }
 
-  // Profile pic upload
-  const picWrapper = document.getElementById('pic-wrapper');
-  const picInput = document.getElementById('pic-input');
-  const picImg = document.getElementById('pic-img');
-  const picPlaceholder = document.getElementById('pic-placeholder');
-
-  picWrapper.addEventListener('click', () => picInput.click());
-  picInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      picImg.src = ev.target.result;
-      picImg.style.display = 'block';
-      picPlaceholder.style.display = 'none';
-    };
-    reader.readAsDataURL(file);
-  });
 
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
