@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vishesh Singhal — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header id="site-header">
+  <div class="nav-inner">
+    <a class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" href="#">Vishesh Singhal</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about" onclick="scrollTo('about')">About</a></li>
+        <li><a href="#experience" onclick="scrollTo('experience')">Experience</a></li>
+        <li><a href="#projects" onclick="scrollTo('projects')">Projects</a></li>
+        <li><a href="#skills" onclick="scrollTo('skills')">Skills</a></li>
+        <li><a href="#contact" onclick="scrollTo('contact')">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <svg id="icon-menu" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="19" y2="6"/><line x1="3" y1="12" x2="19" y2="12"/><line x1="3" y1="18" x2="19" y2="18"/></svg>
+      <svg id="icon-close" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="4" y1="4" x2="18" y2="18"/><line x1="18" y1="4" x2="4" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" style="position:relative;">
+  <div class="hero-inner">
+    <!-- Profile Pic -->
+    <div class="profile-pic-wrapper fade-up" id="pic-wrapper" title="Click to upload photo">
+      <div class="profile-pic-placeholder" id="pic-placeholder">
+        <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+        <span>Add Photo</span>
+      </div>
+      <img id="pic-img" src="" alt="Profile" style="display:none;" />
+      <div class="profile-pic-overlay"><span>Change</span></div>
+    </div>
+    <input type="file" id="pic-input" accept="image/*" />
+
+    <!-- Text -->
+    <div class="hero-text">
+      <p class="hero-tag fade-up" style="transition-delay:0.05s">Computer Science Engineer · Cyber Security & Forensics · UPES Dehradun</p>
+      <h1 class="hero-name fade-up" style="transition-delay:0.1s">Vishesh<br>Singhal.</h1>
+      <p class="hero-sub fade-up" style="transition-delay:0.15s">Building secure systems and impactful software.</p>
+      <div class="hero-actions fade-up" style="transition-delay:0.2s">
+        <a href="resume.pdf" download="Vishesh_Singhal_Resume.pdf" class="btn-primary">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Download Resume
+        </a>
+        <a href="https://tryhackme.com/p/vsinghal04" target="_blank" rel="noreferrer" class="btn-outline">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          TryHackMe
+        </a>
+      </div>
+      <div class="hero-icons fade-up" style="transition-delay:0.25s">
+        <a href="https://github.com/vsinghal04" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-1.93C6.07 20.91 5.39 18.7 5.39 18.7c-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18A10.9 10.9 0 0 1 12 6.84c.97.005 1.95.13 2.86.38 2.18-1.49 3.14-1.18 3.14-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.15v3.19c0 .3.2.66.79.55C20.71 21.38 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/vishesh1308-/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V9H3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:singhalvishesh04@gmail.com" aria-label="Email">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-hint" href="#about">
+    Scroll
+    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label fade-up">About</p>
+    <div class="about-grid">
+      <div class="about-bio fade-up">
+        <p>I am a B.Tech Computer Science Engineering student specializing in Cyber Security & Forensics at UPES Dehradun, currently maintaining a CGPA of 7.99/10. I am passionate about building robust, secure software solutions and leading teams to execute meaningful projects.</p>
+        <p>Beyond academics, I serve as the Student Placement Representative and NSS Secretary, leading over 500 volunteers and dedicating 240+ hours to community service. My focus lies at the intersection of impactful engineering and disciplined leadership.</p>
+      </div>
+      <div class="edu-card fade-up" style="transition-delay:0.1s">
+        <p class="edu-card-label">Education</p>
+        <h3>UPES Dehradun</h3>
+        <p>B.Tech CSE (Cyber Security & Forensics)</p>
+        <p>Aug 2023 – Present</p>
+        <span class="badge">CGPA: 7.99 / 10</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label fade-up">Experience</p>
+    <div class="exp-card fade-up" style="transition-delay:0.05s">
+      <div class="exp-header">
+        <div>
+          <p class="exp-role">Software Engineer Intern</p>
+          <p class="exp-company">Biz Digital IT Services Pvt. Ltd.</p>
+        </div>
+        <span class="exp-date">June 2025 – July 2025</span>
+      </div>
+      <p class="exp-desc">Documented and executed 50+ manual test cases for the IAM module of an HPC application. Verified API functionality using Postman and tracked 3+ defects through Jira. Gained practical experience in AWS Cloud Services including EC2 instances.</p>
+    </div>
+    <div class="exp-card fade-up" style="transition-delay:0.1s">
+      <div class="exp-header">
+        <div>
+          <p class="exp-role">Social Work Intern</p>
+          <p class="exp-company">Arushi Society</p>
+        </div>
+        <span class="exp-date">June 2024 – July 2024</span>
+      </div>
+      <p class="exp-desc">Led 10+ interns with 100% on-time project completion. Created 5+ accessible audio resources for visually impaired candidates, taught 20+ differently-abled students, assisted occupational therapy for 10+ autistic students.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label fade-up">Projects</p>
+    <div class="projects-grid">
+      <div class="project-card fade-up" style="transition-delay:0.05s">
+        <div>
+          <div class="project-header">
+            <span class="project-title">Shield AI</span>
+            <svg class="project-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <p class="project-desc">AI-Powered Social Engineering Defense System. Browser-based multi-layer security detecting AI-generated attacks by analyzing text, URLs, and web content in real time. NLP classification, URL risk analysis, and OCR-driven scanning.</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">JavaScript</span><span class="tag">NLP</span><span class="tag">OCR</span>
+        </div>
+      </div>
+      <div class="project-card fade-up" style="transition-delay:0.1s">
+        <div>
+          <div class="project-header">
+            <span class="project-title">Eco-Vyapaar</span>
+            <svg class="project-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <p class="project-desc">Real-world solution to empower India's small street food vendors, improving digital visibility and operational efficiency for underserved small businesses.</p>
+        </div>
+        <div class="tags">
+          <span class="tag">ReactJS</span><span class="tag">Tailwind CSS</span><span class="tag">Lucide Icons</span><span class="tag">Shadcn UI</span>
+        </div>
+      </div>
+      <div class="project-card fade-up" style="transition-delay:0.15s">
+        <div>
+          <div class="project-header">
+            <span class="project-title">Sikhya-Sangam</span>
+            <svg class="project-icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <p class="project-desc">AI-based academic platform bridging the rural-urban education gap using open-source content, helping students in underserved communities access quality education.</p>
+        </div>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">Java</span><span class="tag">SQLite</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label fade-up">Skills</p>
+    <div class="skills-group fade-up" style="transition-delay:0.05s">
+      <p class="skills-group-label">Programming</p>
+      <div class="skills-pills">
+        <span class="skill-pill">C</span><span class="skill-pill">C++</span><span class="skill-pill">Java</span><span class="skill-pill">Python</span>
+      </div>
+    </div>
+    <div class="skills-group fade-up" style="transition-delay:0.1s">
+      <p class="skills-group-label">Web</p>
+      <div class="skills-pills">
+        <span class="skill-pill">HTML</span><span class="skill-pill">CSS</span><span class="skill-pill">ReactJS</span><span class="skill-pill">Tailwind CSS</span>
+      </div>
+    </div>
+    <div class="skills-group fade-up" style="transition-delay:0.15s">
+      <p class="skills-group-label">Cybersecurity</p>
+      <div class="skills-pills">
+        <span class="skill-pill">Linux</span><span class="skill-pill">Wireshark</span><span class="skill-pill">VAPT</span><span class="skill-pill">OWASP</span><span class="skill-pill">Shodan</span>
+      </div>
+    </div>
+    <div class="skills-group fade-up" style="transition-delay:0.2s">
+      <p class="skills-group-label">Tools</p>
+      <div class="skills-pills">
+        <span class="skill-pill">MySQL</span><span class="skill-pill">Git</span><span class="skill-pill">MS Office</span><span class="skill-pill">Postman</span><span class="skill-pill">Jira</span><span class="skill-pill">AWS EC2</span>
+      </div>
+    </div>
+    <div class="skills-group fade-up" style="transition-delay:0.25s">
+      <p class="skills-group-label">Soft Skills</p>
+      <div class="skills-pills">
+        <span class="skill-pill">Leadership</span><span class="skill-pill">Problem Solving</span><span class="skill-pill">Attention to Detail</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS & CERTS -->
+<section id="achievements">
+  <div class="container">
+    <p class="section-label fade-up">Achievements & Certifications</p>
+    <div class="ach-grid">
+      <div class="fade-up" style="transition-delay:0.05s">
+        <p class="ach-section-title">Achievements</p>
+        <ul class="ach-list">
+          <li>Best Innovator Team at Smart India Hackathon 2025 (Internal Round, pool of 330+ teams at UPES)</li>
+          <li>Raised INR 5000+ for HelpAge India, highest grade contributor at school level</li>
+          <li>Hack Vega Nationwide Hackathon — Certificate of Merit</li>
+        </ul>
+      </div>
+      <div class="fade-up" style="transition-delay:0.1s">
+        <p class="ach-section-title">Certifications</p>
+        <ul class="ach-list">
+          <li>Introduction to Cybersecurity — Cisco Networking Academy</li>
+          <li>Cyber Job Simulation — Deloitte Australia (Forage)</li>
+          <li>Introduction to Generative AI — Google Cloud Skills Boost</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label fade-up">Contact</p>
+    <h2 class="contact-title fade-up" style="transition-delay:0.05s">Let's build something.</h2>
+    <p class="contact-sub fade-up" style="transition-delay:0.1s">Currently open to new opportunities. Reach out if you'd like to collaborate or just say hello.</p>
+    <div class="contact-links fade-up" style="transition-delay:0.15s">
+      <a href="https://linkedin.com/in/vishesh1308-/" target="_blank" rel="noreferrer">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.56 20.45h3.56V9H3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        linkedin.com/in/vishesh1308-/
+      </a>
+      <a href="https://tryhackme.com/p/vsinghal04" target="_blank" rel="noreferrer">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+        tryhackme.com/p/vsinghal04
+      </a>
+      <hr class="contact-divider" />
+      <a href="https://github.com/vsinghal04" target="_blank" rel="noreferrer">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-1.93C6.07 20.91 5.39 18.7 5.39 18.7c-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18A10.9 10.9 0 0 1 12 6.84c.97.005 1.95.13 2.86.38 2.18-1.49 3.14-1.18 3.14-1.18.63 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.15v3.19c0 .3.2.66.79.55C20.71 21.38 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
+        github.com/vsinghal04
+      </a>
+      <a href="mailto:singhalvishesh04@gmail.com">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        singhalvishesh04@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Vishesh Singhal.</span>
+    <span>All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
